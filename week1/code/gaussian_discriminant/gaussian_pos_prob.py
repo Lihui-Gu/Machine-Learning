@@ -19,7 +19,10 @@ def gaussian_pos_prob(X, Mu, Sigma, Phi):
     N = X.shape[1]
     K = Phi.shape[0]
     p = np.zeros((N, K))
-    #Your code HERE
-    
-    return p
+    det = np.linalg.det(Sigma)
+    inv = np.matrix(np.linalg.inv(Sigma))
+    x_mu = np.matrix(X - Mu).T
+    Const = 1 / (((2 * np.pi) * (det ** (1 / 2)))
+    Exp = -0.5 * x_mu.T * inv * x_mu
+    return float(Const * np.exp(Exp))
     

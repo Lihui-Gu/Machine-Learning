@@ -24,8 +24,6 @@ def classification(judge_matrix, x_data, data_range, real_label = 0):
         else:
             error_num += 1
     return error_num
-
-
         
 def main():
     # 1. load data from data.mat
